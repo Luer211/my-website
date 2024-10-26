@@ -1,0 +1,92 @@
+/* 全局样式 */
+/* 重置所有元素的默认边距和内边距，确保所有元素的 box 模型为 border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 包括内边距和边框在元素的总宽高计算中 */
+}
+
+/* 设置 body 和 html 标签的高度为 100%，使背景图片能完全覆盖整个页面 */
+body, html {
+    height: 100%; /* 确保页面的高度充满视口 */
+    font-family: "Zen Maru Gothic", "ヒラギノ角ゴ Pro W3", 
+    "Hiragino Kaku Gothic Pro", "メイリオ", 
+    Meiryo, "M S Ｐゴシック", sans-serif,'Noto Sans JP', sans-serif;;
+    /*
+    background: url('../assets/images/your-image.jpg') no-repeat center center fixed;
+    /* 背景图居中，并在页面滚动时固定不动 */
+    background-size: cover; /* 背景图按比例缩放，完全覆盖页面 */
+}
+
+
+
+/* 背景视频样式 */
+#bg-video {
+    position: fixed; /* 固定定位 */
+    top: 0; /* 距离顶部0 */
+    left: 0; /* 距离左侧0 */
+    width: 100%; /* 宽度占满整个页面 */
+    height: 100%; /* 高度占满整个页面 */
+    object-fit: cover; /* 保持宽高比并覆盖整个区域 */
+    z-index: -1; /* 确保视频位于其他内容的下方 */
+}
+
+/* 其他内容的样式 */
+.custom-container, .header, .menu-container {
+    position: relative; /* 使内容相对于视频进行定位 */
+    z-index: 1; /* 确保内容在视频之上 */
+}
+
+
+/* 设置左下角文字容器样式 */
+.custom-container {
+    width: 40%; /* 容器宽度设为页面宽度的60% */
+    background-color: transparent; /* 透明背景，视觉效果更好 */
+    padding: 20px; /* 内部填充，确保内容与边缘有间距 */
+    color: white; /* 文字颜色为白色 */
+    border-radius: 10px; /* 圆角效果 */
+    
+    /* 使用绝对定位 */
+    position: absolute; /* 绝对定位 */
+    top: 42%; /* 相对于页面顶部，距离20%视口高度 */
+    left: 10%; /* 相对于页面左侧，距离10%视口宽度 */
+
+}
+
+.custom-container h1 {
+    font-size: 60px;
+    color: rgb(240, 229, 229);
+    font-weight: 700; /* 加粗标题 */
+    margin-bottom: 20px; /* 设置标题和下一个元素之间的距离 */
+}
+
+#dynamic-text {
+    transition: opacity 0.5s ease; /* 添加渐变效果 */
+    display: inline; /* 确保文本在同一行内 */
+}
+
+
+
+
+/* 右下角联系图标的容器样式 */
+.contact-icons {
+    position: fixed;        /* 固定位置 */
+    bottom: 8%;           /* 离页面底部20px */
+    right: 5%;            /* 离页面右侧20px */
+    display: flex;          /* 使用 flex 布局 */
+    gap: 15px;              /* 图标之间的间距 */
+}
+
+/* 图标样式 */
+.contact-icons a img {
+    width: 50px;            /* 图标宽度 */
+    height: 50px;           /* 图标高度 */
+    transition: transform 0.3s ease; /* 鼠标悬停效果 */
+}
+
+.contact-icons a img:hover {
+    transform: scale(1.1);  /* 鼠标悬停时放大 */
+}
+
+
+

@@ -1,0 +1,152 @@
+/* 全局样式 */
+/* 重置所有元素的默认边距和内边距，确保所有元素的 box 模型为 border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 包括内边距和边框在元素的总宽高计算中 */
+}
+
+/* 设置 body 和 html 标签的高度为 100%，使背景图片能完全覆盖整个页面 */
+body, html {
+    height: 100%; /* 确保页面的高度充满视口 */
+    font-family: "Zen Maru Gothic", "ヒラギノ角ゴ Pro W3", 
+    "Hiragino Kaku Gothic Pro", "メイリオ", 
+    Meiryo, "M S Ｐゴシック", sans-serif,'Noto Sans JP', sans-serif;;
+    /*
+    background: url('../assets/images/your-image.jpg') no-repeat center center fixed;
+    /* 背景图居中，并在页面滚动时固定不动 */
+    /* 
+    background-size: cover; /* 背景图按比例缩放，完全覆盖页面 */
+}
+
+/* 顶部导航栏样式 */
+/* 导航栏设置为固定宽度，透明背景，左侧放 Logo，右侧放菜单按钮 */
+.header {
+    display: flex; /* 使用 flex 布局，让 Logo 和菜单按钮左右排列 */
+    justify-content: space-between; /* 将 Logo 放在左边，菜单按钮放在右边 */
+    align-items: center; /* 垂直居中对齐 */
+    width: 100%; /* 导航栏的宽度占满整个页面 */
+    height: 100px; /* 导航栏高度设为 100px */
+    background-color: transparent; /* 导航栏背景为透明 */
+    position: fixed; /* 导航栏固定在页面顶部 */
+    top: 0; /* 导航栏固定在页面顶部 */
+    left: 0; /* 从页面左侧开始 */
+    z-index: 1000; /* 让导航栏位于其他元素的上方 */
+    padding: 10px 5%; /* 给导航栏添加内边距，使内容不贴边 */
+}
+
+/* Logo 容器的样式 */
+/* 左侧 Logo 放在导航栏的左边 */
+.logo-container {
+    flex: 1; /* 让 Logo 占据左侧的剩余空间 */
+}
+
+/* 设置 Logo 图片的最大高度，确保不会撑大导航栏 */
+.logo-container img {
+    max-height: 70px; /* Logo 最大高度为 70px */
+    width: auto; /* 保持宽高比例自适应 */
+    height: auto; /* 高度根据宽度比例缩放 */
+}
+
+/* 菜单按钮样式 */
+/* 这是“菜单”按钮的基本样式 */
+.menu-toggle {
+    font-size: 18px; /* 设置文字大小为 18px */
+    color: white; /* 按钮文字颜色 */
+    background-color: transparent; /* 按钮背景透明 */
+    border: 2px solid white; /* 添加白色边框，增加按钮的可见性 */
+    padding: 10px 20px; /* 添加内边距，让按钮有更多的空间 */
+    border-radius: 10px; /* 设置按钮的圆角 */
+    cursor: pointer; /* 鼠标悬停时显示手型指针 */
+    display: flex; /* 使用 flex 布局，让文本和图标横向排列 */
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: center; /* 水平居中对齐 */
+    gap: 10px; /* 在 "MENU" 文本和图标之间留出间距 */
+    transition: all 0.3s ease; /* 添加平滑的过渡效果 */
+}
+
+/* 鼠标悬停时的效果：背景和边框颜色变化 */
+.menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* 鼠标悬停时，背景颜色变为半透明白色 */
+    border-color: #10c6e6; /* 边框颜色变为黄色 */
+    color: #10c6e6;/*鼠标悬停时，MENU的颜色变化*/
+}
+
+
+/* 三条横线（汉堡菜单）图标样式 */
+.menu-icon {
+    display: flex; /* 使用 flex 布局，让横线垂直排列 */
+    flex-direction: column; /* 使三个 `span` 垂直排列 */
+    justify-content: space-between; /* 横线之间的间距平均分布 */
+    height: 18px; /* 整个图标的总高度 */
+}
+
+/* 单个横线样式 */
+.menu-icon span {
+    display: block; /* 将每个 span 作为块级元素 */
+    width: 25px; /* 设置横线的宽度为 25px */
+    height: 2px; /* 设置横线的高度为 2px */
+    background-color: white; /* 横线颜色为白色 */
+    transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+/* 当菜单打开时的汉堡菜单样式 */
+.menu-toggle.active .menu-icon span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* 第一条线旋转并向下移动 */
+}
+
+.menu-toggle.active .menu-icon span:nth-child(2) {
+    opacity: 0; /* 第二条线消失 */
+}
+
+.menu-toggle.active .menu-icon span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); /* 第三条线旋转并向上移动 */
+}
+
+/* 鼠标悬停时，汉堡菜单的颜色变化 */
+.menu-toggle:hover .menu-icon span {
+    background-color: #10c6e6; /* 鼠标悬停时，横线颜色变为黄色 */
+}
+
+
+/* 菜单容器样式 */
+/* 设置导航菜单的容器样式 */
+.menu-container {
+    display: none; /* 初始状态下，菜单容器是隐藏的 */
+    position: fixed; /* 菜单容器固定在屏幕中间，不随页面滚动 */
+    top: 10%; /* 容器距离页面顶部 20% 的位置 */
+    left: 10%; /* 容器距离页面左边 10% 的位置 */
+    width: 80%; /* 容器宽度为页面宽度的 80% */
+    height: 80%; /* 容器高度为页面高度的 80% */
+    background-color: rgba(0, 0, 0, 0.8); /* 背景颜色为半透明的黑色 */
+    color: white; /* 容器内部文字颜色为白色 */
+    border-radius: 30px; /* 容器的四个角设置为圆角 */
+    z-index: 2000; /* 让菜单容器位于页面的最上层，覆盖其他内容 */
+    padding: 20px; /* 给容器添加 20px 的内边距 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* 给容器添加阴影效果，提升视觉层次 */
+}
+
+/* 菜单内容样式 */
+/* 设置导航菜单内部的列表样式 */
+.nav-menu ul {
+    list-style: none; /* 去掉列表的默认符号 */
+    padding: 0; /* 去掉内边距 */
+    text-align: center; /* 列表内容居中 */
+}
+
+/* 每个列表项之间添加垂直间距 */
+.nav-menu ul li {
+    margin: 20px 0; /* 每个菜单项上下 20px 的间距 */
+}
+
+/* 菜单项的链接样式 */
+.nav-menu ul li a {
+    font-size: 24px; /* 菜单项的文字大小设置为 24px */
+    text-decoration: none; /* 去掉下划线 */
+    color: white; /* 文字颜色为白色 */
+}
+
+/* 鼠标悬停在菜单项时，文字颜色变为蓝色 */
+.nav-menu ul li a:hover {
+    color:#10c6e6; /* 鼠标悬停时，文字颜色变为蓝色 */
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航栏</title>
+
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <!-- 字体设置 嗯目前尚未确定 日本圆润字体目前甚得我心 -->
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <!-- 左侧 Logo 容器 -->
+        <div class="logo-container">
+            <!-- 网站的 Logo 图像，点击 Logo 会跳转到首页 -->
+            <a href="/"><img src="assets/images/logo2.png" alt="🌟小卢DreamWorks"></a>
+        </div>
+        
+        <!-- 菜单按钮，点击后显示/隐藏导航容器 -->
+        <button class="menu-toggle" id="menu-toggle">
+            MENU
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+    <!-- 覆盖的导航容器，初始时隐藏 -->
+    <div id="menu-container" class="menu-container">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li><a href="pages/myworld.html">我的世界</a></li>
+                <li><a href="pages/mydream.html">我的梦想</a></li>
+                <li><a href="pages/projects.html">我的项目</a></li>
+                <li><a href="pages/todolist.html">人生清单</a></li>
+                <li><a href="pages/wordstome.html">留言板</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- 引入外部 JavaScript 文件 -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小卢的个人网站</title>
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <!-- 字体设置 嗯目前尚未确定 日本圆润字体目前甚得我心 -->
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <body>
+
+        <!-- 背景视频 -->
+        <video autoplay muted loop id="bg-video">
+           <source src="https://videos.pexels.com/video-files/3205401/3205401-hd_1920_1080_25fps.mp4" type="video/mp4">
+           Your browser does not support the video tag.
+       </video>
+   
+       <div class="custom-container">
+           <h1>
+               欢迎来到，<br>
+               &nbsp;&nbsp;&nbsp;<span id="dynamic-text">小卢的梦工厂...</span>
+           </h1>
+       </div>
+   
+       <div class="contact-icons">
+           <a href="mailto:lueryy11@gmail.com" title="Email">
+               <img src="assets/icons/email-icon.png" alt="Email">
+           </a>
+           <a href="https://github.com/Luer211" target="_blank" title="GitHub">
+               <img src="assets/icons/github-icon.png" alt="GitHub">
+           </a>
+       </div>
+   
+       <script>
+        async function loadNavbar() {
+          try {
+            const response = await fetch('pages/navbar.html');
+            if (!response.ok) throw new Error('Failed to load navbar');
+            const navbarHTML = await response.text();
+            document.getElementById('navbar-placeholder').innerHTML = navbarHTML;
+          } catch (error) {
+            console.error('Error loading navbar:', error);
+          }
+        }
+    
+        loadNavbar();
+      </script>      
+
+   
+       <!-- 引入外部 JavaScript 文件 -->
+       <script src="js/script.js"></script>
+   
+   
+   </body>
+   
+</body>
+</html>
