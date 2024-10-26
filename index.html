@@ -40,7 +40,7 @@
        <script>
         async function loadNavbar() {
           try {
-            const response = await fetch('pages/navbar.html');
+            const response = await fetch('https://luer211.github.io/my-website/navbar.html');
             if (!response.ok) throw new Error('Failed to load navbar');
             const navbarHTML = await response.text();
             document.getElementById('navbar-placeholder').innerHTML = navbarHTML;
