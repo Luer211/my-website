@@ -10,8 +10,13 @@
 body, html {
     height: 100%; /* 确保页面的高度充满视口 */
     font-family: "Zen Maru Gothic", "ヒラギノ角ゴ Pro W3", 
-    "Hiragino Kaku Gothic Pro", "メイリオ", 
-    Meiryo, "M S Ｐゴシック", sans-serif, 'Noto Sans JP', sans-serif; /* 设置字体 */
+                 "Hiragino Kaku Gothic Pro", "メイリオ", 
+                 Meiryo, "M S Ｐゴシック", sans-serif,'Noto Sans JP', sans-serif;;
+    /*
+    background: url('../assets/images/your-image.jpg') no-repeat center center fixed;
+    /* 背景图居中，并在页面滚动时固定不动 */
+    /* 
+    background-size: cover; /* 背景图按比例缩放，完全覆盖页面 */
 }
 
 /* 顶部导航栏样式 */
@@ -63,9 +68,10 @@ body, html {
 /* 鼠标悬停时的效果：背景和边框颜色变化 */
 .menu-toggle:hover {
     background-color: rgba(255, 255, 255, 0.2); /* 鼠标悬停时，背景颜色变为半透明白色 */
-    border-color: #10c6e6; /* 边框颜色变为蓝色 */
-    color: #10c6e6; /* 鼠标悬停时，MENU的颜色变化 */
+    border-color: #10c6e6; /* 边框颜色变为黄色 */
+    color: #10c6e6;/*鼠标悬停时，MENU的颜色变化*/
 }
+
 
 /* 三条横线（汉堡菜单）图标样式 */
 .menu-icon {
@@ -99,15 +105,16 @@ body, html {
 
 /* 鼠标悬停时，汉堡菜单的颜色变化 */
 .menu-toggle:hover .menu-icon span {
-    background-color: #10c6e6; /* 鼠标悬停时，横线颜色变为蓝色 */
+    background-color: #10c6e6; /* 鼠标悬停时，横线颜色变为黄色 */
 }
+
 
 /* 菜单容器样式 */
 /* 设置导航菜单的容器样式 */
 .menu-container {
     display: none; /* 初始状态下，菜单容器是隐藏的 */
     position: fixed; /* 菜单容器固定在屏幕中间，不随页面滚动 */
-    top: 10%; /* 容器距离页面顶部 10% 的位置 */
+    top: 10%; /* 容器距离页面顶部 20% 的位置 */
     left: 10%; /* 容器距离页面左边 10% 的位置 */
     width: 80%; /* 容器宽度为页面宽度的 80% */
     height: 80%; /* 容器高度为页面高度的 80% */
@@ -132,4 +139,14 @@ body, html {
     margin: 20px 0; /* 每个菜单项上下 20px 的间距 */
 }
 
+/* 菜单项的链接样式 */
+.nav-menu ul li a {
+    font-size: 24px; /* 菜单项的文字大小设置为 24px */
+    text-decoration: none; /* 去掉下划线 */
+    color: white; /* 文字颜色为白色 */
+}
 
+/* 鼠标悬停在菜单项时，文字颜色变为蓝色 */
+.nav-menu ul li a:hover {
+    color: #10c6e6; /* 鼠标悬停时，文字颜色变为蓝色 */
+}
