@@ -10,17 +10,11 @@
 body, html {
     height: 100%; /* 确保页面的高度充满视口 */
     font-family: "Zen Maru Gothic", "ヒラギノ角ゴ Pro W3", 
-    "Hiragino Kaku Gothic Pro", "メイリオ", 
-    Meiryo, "M S Ｐゴシック", sans-serif,'Noto Sans JP', sans-serif;;
-    /*
-    background: url('../assets/images/your-image.jpg') no-repeat center center fixed;
-    /* 背景图居中，并在页面滚动时固定不动 */
-    /* 
-    background-size: cover; /* 背景图按比例缩放，完全覆盖页面 */
+                 "Hiragino Kaku Gothic Pro", "メイリオ", 
+                 Meiryo, "M S Ｐゴシック", sans-serif, 'Noto Sans JP', sans-serif;
 }
 
 /* 顶部导航栏样式 */
-/* 导航栏设置为固定宽度，透明背景，左侧放 Logo，右侧放菜单按钮 */
 .header {
     display: flex; /* 使用 flex 布局，让 Logo 和菜单按钮左右排列 */
     justify-content: space-between; /* 将 Logo 放在左边，菜单按钮放在右边 */
@@ -36,7 +30,6 @@ body, html {
 }
 
 /* Logo 容器的样式 */
-/* 左侧 Logo 放在导航栏的左边 */
 .logo-container {
     flex: 1; /* 让 Logo 占据左侧的剩余空间 */
 }
@@ -45,11 +38,9 @@ body, html {
 .logo-container img {
     max-height: 70px; /* Logo 最大高度为 70px */
     width: auto; /* 保持宽高比例自适应 */
-    height: auto; /* 高度根据宽度比例缩放 */
 }
 
 /* 菜单按钮样式 */
-/* 这是“菜单”按钮的基本样式 */
 .menu-toggle {
     font-size: 18px; /* 设置文字大小为 18px */
     color: white; /* 按钮文字颜色 */
@@ -68,10 +59,9 @@ body, html {
 /* 鼠标悬停时的效果：背景和边框颜色变化 */
 .menu-toggle:hover {
     background-color: rgba(255, 255, 255, 0.2); /* 鼠标悬停时，背景颜色变为半透明白色 */
-    border-color: #10c6e6; /* 边框颜色变为黄色 */
-    color: #10c6e6;/*鼠标悬停时，MENU的颜色变化*/
+    border-color: #10c6e6; /* 边框颜色变为蓝色 */
+    color: #10c6e6; /* 鼠标悬停时，MENU的颜色变化 */
 }
-
 
 /* 三条横线（汉堡菜单）图标样式 */
 .menu-icon {
@@ -105,16 +95,14 @@ body, html {
 
 /* 鼠标悬停时，汉堡菜单的颜色变化 */
 .menu-toggle:hover .menu-icon span {
-    background-color: #10c6e6; /* 鼠标悬停时，横线颜色变为黄色 */
+    background-color: #10c6e6; /* 鼠标悬停时，横线颜色变为蓝色 */
 }
 
-
 /* 菜单容器样式 */
-/* 设置导航菜单的容器样式 */
 .menu-container {
     display: none; /* 初始状态下，菜单容器是隐藏的 */
     position: fixed; /* 菜单容器固定在屏幕中间，不随页面滚动 */
-    top: 10%; /* 容器距离页面顶部 20% 的位置 */
+    top: 10%; /* 容器距离页面顶部 10% 的位置 */
     left: 10%; /* 容器距离页面左边 10% 的位置 */
     width: 80%; /* 容器宽度为页面宽度的 80% */
     height: 80%; /* 容器高度为页面高度的 80% */
@@ -127,7 +115,6 @@ body, html {
 }
 
 /* 菜单内容样式 */
-/* 设置导航菜单内部的列表样式 */
 .nav-menu ul {
     list-style: none; /* 去掉列表的默认符号 */
     padding: 0; /* 去掉内边距 */
@@ -148,5 +135,5 @@ body, html {
 
 /* 鼠标悬停在菜单项时，文字颜色变为蓝色 */
 .nav-menu ul li a:hover {
-    color:#10c6e6; /* 鼠标悬停时，文字颜色变为蓝色 */
+    color: #10c6e6; /* 鼠标悬停时，文字颜色变为蓝色 */
 }

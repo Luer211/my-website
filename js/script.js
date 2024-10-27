@@ -16,13 +16,14 @@ if (menuToggle) { // 确保菜单按钮存在
     });
 }
 
-
+// 获取动态文本元素
 const dynamicText = document.getElementById('dynamic-text');
 const originalText = '小卢的梦工厂'; // 原始文本内容（去掉了...）
 const dotCount = 3; // 点的总数量
 let currentDots = 0; // 当前点数
 let interval; // 定义定时器
 
+// 更新动态文本的函数
 function updateText() {
     // 生成当前点数的字符串
     const dots = '.'.repeat(currentDots);
