@@ -10,11 +10,12 @@
 body, html {
     height: 100%; /* 确保页面的高度充满视口 */
     font-family: "Zen Maru Gothic", "ヒラギノ角ゴ Pro W3", 
-                 "Hiragino Kaku Gothic Pro", "メイリオ", 
-                 Meiryo, "M S Ｐゴシック", sans-serif, 'Noto Sans JP', sans-serif;
+    "Hiragino Kaku Gothic Pro", "メイリオ", 
+    Meiryo, "M S Ｐゴシック", sans-serif, 'Noto Sans JP', sans-serif; /* 设置字体 */
 }
 
 /* 顶部导航栏样式 */
+/* 导航栏设置为固定宽度，透明背景，左侧放 Logo，右侧放菜单按钮 */
 .header {
     display: flex; /* 使用 flex 布局，让 Logo 和菜单按钮左右排列 */
     justify-content: space-between; /* 将 Logo 放在左边，菜单按钮放在右边 */
@@ -30,6 +31,7 @@ body, html {
 }
 
 /* Logo 容器的样式 */
+/* 左侧 Logo 放在导航栏的左边 */
 .logo-container {
     flex: 1; /* 让 Logo 占据左侧的剩余空间 */
 }
@@ -38,9 +40,11 @@ body, html {
 .logo-container img {
     max-height: 70px; /* Logo 最大高度为 70px */
     width: auto; /* 保持宽高比例自适应 */
+    height: auto; /* 高度根据宽度比例缩放 */
 }
 
 /* 菜单按钮样式 */
+/* 这是“菜单”按钮的基本样式 */
 .menu-toggle {
     font-size: 18px; /* 设置文字大小为 18px */
     color: white; /* 按钮文字颜色 */
@@ -99,6 +103,7 @@ body, html {
 }
 
 /* 菜单容器样式 */
+/* 设置导航菜单的容器样式 */
 .menu-container {
     display: none; /* 初始状态下，菜单容器是隐藏的 */
     position: fixed; /* 菜单容器固定在屏幕中间，不随页面滚动 */
@@ -115,6 +120,7 @@ body, html {
 }
 
 /* 菜单内容样式 */
+/* 设置导航菜单内部的列表样式 */
 .nav-menu ul {
     list-style: none; /* 去掉列表的默认符号 */
     padding: 0; /* 去掉内边距 */
@@ -126,14 +132,4 @@ body, html {
     margin: 20px 0; /* 每个菜单项上下 20px 的间距 */
 }
 
-/* 菜单项的链接样式 */
-.nav-menu ul li a {
-    font-size: 24px; /* 菜单项的文字大小设置为 24px */
-    text-decoration: none; /* 去掉下划线 */
-    color: white; /* 文字颜色为白色 */
-}
 
-/* 鼠标悬停在菜单项时，文字颜色变为蓝色 */
-.nav-menu ul li a:hover {
-    color: #10c6e6; /* 鼠标悬停时，文字颜色变为蓝色 */
-}
